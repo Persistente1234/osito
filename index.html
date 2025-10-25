@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+  <title>Oso BerMatMods</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      padding: 0;
+      margin: 0;
+      width: 100vw;
+      height: 100vh;
+      /* Fondo negro eliminado */
+      overflow: hidden;
+      font-family: Georgia, serif;
+      cursor: url("image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' width='40px' height='40px' viewBox='0 0 122.1 129.3'%3E %3Cg%3E %3Cpath id='bottom' d='M118.6,74.8c0,20.4-12.7,38.1-31.2,46.9a12.4,12.4,0,0,1-5.3,1.2H40a11.9,11.9,0,0,1-5.1-1.1c-18-8.5-30.6-25.4-31.4-45-0.6-15.2,7.1-28,16.5-39a33.5,33.5,0,0,0,6.2-12.1H95.9A33.4,33.4,0,0,0,102,37.7C111,48.2,118.6,60.3,118.6,74.8Z' fill='%23af571d'/%3E %3Cpath id='top' d='M118.6,74.8a48.8,48.8,0,0,1-5,21.6H8.6A48.3,48.3,0,0,1,3.5,76.7c-0.6-15.2,7.1-28,16.5-39a33.5,33.5,0,0,0,6.2-12.1H95.9A33.4,33.4,0,0,0,102,37.7C111,48.2,118.6,60.3,118.6,74.8Z' fill='%23e07320'/%3E %3Cpath id='shadow' d='M117.1,73.9c0,17.3-9.1,32.7-23.3,42.3a33.9,33.9,0,0,1-19.1,5.7H44.7a34.5,34.5,0,0,1-19.4-5.8,57.6,57.6,0,0,1-5.4-4.2c-0.9-.8.3-2.1,1.3-1.4h0.1c5.4,3.7,12,4,18.8,4H70.5c10.2-.4,16.8-2.4,21.6-6.1,14.3-10.9,20.7-23,20.7-40.3A42.2,42.2,0,0,0,111,56c-0.3-1.1,1.4-1.7,1.9-.6A44.2,44.2,0,0,1,117.1,73.9Z' fill='%23873f16'/%3E %3Cpath id='pot-stroke' d='M118.6,74.8c0,17.3-9.1,32.7-23.3,42.3a33.9,33.9,0,0,1-19.1,5.7H45.9a33.7,33.7,0,0,1-18.8-5.5C13.4,108,4.2,93.3,3.5,76.7s7.1-28,16.5-39a33.5,33.5,0,0,0,6.2-12.1H95.9A33.4,33.4,0,0,0,102,37.7C111,48.2,118.6,60.3,118.6,74.8Z' fill='none' stroke='%233f1c0d' stroke-miterlimit='10' stroke-width='7'/%3E %3Crect x='4.9' y='9.3' width='112.2' height='23.26' rx='6.7' ry='6.7' fill='%23af571d' stroke='%233f1c0d' stroke-miterlimit='10' stroke-width='7'/%3E %3C/g%3E %3Cg id='honey'%3E %3Cpath d='M105.5,28.3h-0.1a5.8,5.8,0,0,1,.1,1V77.6c0,4-3.6,7.3-8,7.3H94.4c-4.4,0-8-3.3-8-7.3V51.1c0-3.6-3.2-6.5-7.1-6.5h-1c-3.9,0-7.1,2.9-7.1,6.5V66.4c0,4-3.6,7.4-8,7.4H60.2c-4.2,0-7.7-3-8-6.8V53.7c0-3.6-3.2-6.5-7.1-6.5H45.1A6.8,6.8,0,0,0,38,53.5h0V84c0,4-3.6,7.3-8,7.3H26.9c-4.4,0-8-3.3-8-7.3V30.5c0-.2,0-0.5,0-0.7a6.2,6.2,0,0,1,.2-1H18.9V17.8C18.9,11.3,24.7,6,31.7,6h67a6.5,6.5,0,0,1,6.7,6.2V28.3Z' fill='%23873f16'/%3E %3Cpath d='M103.5,22.3s0,0.7,0,1.1V71.6c0,4-3.6,7.3-8,7.3H92.3c-4.4,0-8-3.3-8-7.3V45.1c0-3.6-3.2-6.5-7.1-6.5h-1c-3.9,0-7.1,2.9-7.1,6.5V60.4c0,4-3.6,7.4-8,7.4H58.1c-4.2,0-7.7-3-8-6.8V47.7c0-3.6-3.2-6.5-7.1-6.5H43A6.8,6.8,0,0,0,36,47.5h0V78c0,4-3.6,7.3-8,7.3H24.8c-4.4,0-8-3.3-8-7.3V11.8C16.8,5.3,22.6,0,29.7,0h67a6.5,6.5,0,0,1,6.7,6.2V22.3Z' fill='%23f8ca13'/%3E %3Cpath d='M49.1,42.7v1.6a7.2,7.2,0,0,0-6-3.1H43a6.8,6.8,0,0,0-7,6.3h0V78c0,4-3.6,7.3-8,7.3H24.8c-4.4,0-8-3.3-8-7.3V76.6a8.2,8.2,0,0,0,7,3.7h3.1c4.4,0,8-3.3,8-7.3V42.5h0a6.8,6.8,0,0,1,7-6.3h0.1C45.9,36.2,49.1,39.1,49.1,42.7Z' fill='%23ed991d'/%3E %3Cpath d='M83.3,40.1v1.6a7.2,7.2,0,0,0-6-3.1h-1c-3.9,0-7.1,2.9-7.1,6.5V60.4c0,4-3.6,7.4-8,7.4H58.1c-4.2,0-7.7-3-8-6.8V59a8.1,8.1,0,0,0,6.9,3.7h3.1c4.4,0,8-3.3,8-7.4V40.1c0-3.6,3.2-6.5,7.1-6.5h1C80.1,33.6,83.3,36.5,83.3,40.1Z' fill='%23ed991d'/%3E %3Cpath d='M103.5,23.4V71.6c0,4-3.6,7.3-8,7.3H92.3c-4.4,0-8-3.3-8-7.3V70.2a8.1,8.1,0,0,0,6.9,3.7h3.1c4.4,0,8-3.3,8-7.3V18.4a5.4,5.4,0,0,0-.1-1h0.1V2.9a5.8,5.8,0,0,1,1,3.3V23.4Z' fill='%23ed991d'/%3E %3Cpath d='M103.5,28.6v1a5.6,5.6,0,0,0-.1-0.9h0.1Z' fill='%23f8ca13'/%3E %3Crect x='23.9' y='4' width='38.8' height='7.21' rx='3.6' ry='3.6' fill='%23f9f4d6' opacity='0.71'/%3E %3C/g%3E %3C/svg%3E"), auto;
+    }
+
+    /* Fondo con imagen difuminada */
+    #background-layer {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://i.postimg.cc/vZFGv0dH/b18b7b758d305bdecc92c7b7cef6d7ca-1.jpg') center/cover no-repeat;
+      z-index: -3;
+    }
+
+    /* Capa oscura translúcida para mejorar contraste (opcional) */
+    #overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4); /* Oscurece suavemente */
+      z-index: -2;
+      backdrop-filter: blur(8px); /* ¡Este es el difuminado clave! */
+    }
+
+    /* Capa de brillos flotantes */
+    #sparkles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    /* Contenedor principal del contenido (oso + galaxia) */
+    #main-content {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 10;
+      transition: filter 0.6s ease;
+      pointer-events: none;
+    }
+
+    .container {
+      position: relative;
+      z-index: 10;
+      pointer-events: auto;
+    }
+
+    svg {
+      width: 200px;
+      z-index: 10;
+      position: relative;
+    }
+
+    #galaxy {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+    }
+
+    .love-text {
+      position: absolute;
+      font-size: 2rem;
+      font-weight: bold;
+      color: white;
+      font-family: 'Playfair Display', serif;
+      text-shadow: 0 0 10px #ff9ec7, 0 0 20px #ff7aa7, 0 0 30px #ff5a8a, 0 0 40px #ff3a6a;
+      z-index: 20;
+      pointer-events: none;
+      animation: float 2.5s ease-out forwards;
+      transform: translate(-50%, -50%);
+      left: 50%;
+      top: 50%;
+    }
+
+    @keyframes float {
+      0% { transform: translate(-50%, -50%) scale(0.5); opacity: 1; }
+      100% { transform: translate(-50%, -150%) scale(1.5); opacity: 0; }
+    }
+
+    .credits {
+      position: fixed;
+      bottom: 15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: auto;
+      text-align: center;
+      font-family: 'Pacifico', cursive;
+      font-size: 1.1rem;
+      color: #ffeb3b;
+      z-index: 40;
+      text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+      pointer-events: none;
+    }
+
+    #start-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.75);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 50;
+      transition: opacity 0.6s, visibility 0.6s;
+    }
+
+    #start-message {
+      color: white;
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4rem;
+      text-align: center;
+      text-shadow: 0 0 12px #ff9ec7, 0 0 24px #ff7aa7;
+      padding: 0 20px;
+      max-width: 90%;
+      line-height: 1.4;
+    }
+
+    @media (max-width: 600px) {
+      #start-message {
+        font-size: 2rem;
+      }
+    }
+
+    #bg-music {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <audio id="bg-music" src="stand by me.mp3" preload="auto"></audio>
+
+  <!-- Fondo con imagen -->
+  <div id="background-layer"></div>
+  <!-- Capa oscura con difuminado -->
+  <div id="overlay"></div>
+
+  <!-- Canvases encima (transparentes) -->
+  <canvas id="galaxy"></canvas>
+  <canvas id="sparkles"></canvas>
+
+  <div id="start-screen">
+    <div id="start-message">Toca la pantalla</div>
+  </div>
+
+  <div class="credits">By: 𖤍VIC 💜 PERSI𖤍</div>
+
+  <div id="main-content">
+    <div class="container">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -20 446.4 686.5">
+        <!-- (SVG del oso igual que antes) -->
+        <title>Curious Bear</title>
+        <g id="bear">
+          <ellipse cx="223.2" cy="637.6" rx="223.2" ry="29" fill="#3F1C0C" opacity="0.3"/>
+          <g id="body">
+            <path d="M376.3,460.3c0,63.2-17.1,120.3-44.7,161.4h0l-4.5,6.5a18.9,18.9,0,0,1-13,5.1H260.5a19.1,19.1,0,0,1-19-19V553.2a124.2,124.2,0,0,1-30.5.3v62a19.1,19.1,0,0,1-19,19H138.5a19,19,0,0,1-15.2-7.6l-0.5-.7C93.4,584.6,75.1,525.7,75.1,460.3c0-125.3,67.4-226.9,150.6-226.9S376.3,335,376.3,460.3Z" fill="#e07320"/>
+            <path d="M211,596.9v18.4a19.1,19.1,0,0,1-19,19H138.5a19,19,0,0,1-15.2-7.7l-0.5-.7C93.4,584.6,75.1,525.7,75.1,460.3q0-4.6.1-9.2c1.6,61.6,19.6,117,47.5,156.4l0.5,0.8a19,19,0,0,0,15.2,7.7H192A19.1,19.1,0,0,0,211,596.9Z" fill="#af571d"/>
+            <path d="M376.3,459.3c0,63.1-17.1,120.3-44.7,161.4h0l-4.5,6.5a18.9,18.9,0,0,1-13,5.2H260.5a19.1,19.1,0,0,1-19-19V594.9a19.1,19.1,0,0,0,19,19H314a18.9,18.9,0,0,0,13-5.2l4.5-6.5h0c26.3-39.1,43-92.7,44.6-152.2Q376.3,454.7,376.3,459.3Z" fill="#af571d"/>
+            <path id="body-stroke" d="M376.3,460.3c0,63.2-17.1,120.3-44.7,161.4h0l-4.5,6.5a18.9,18.9,0,0,1-13,5.1H260.5a19.1,19.1,0,0,1-19-19V553.2a124.2,124.2,0,0,1-30.5.3v62a19.1,19.1,0,0,1-19,19H138.5a19,19,0,0,1-15.2-7.6l-0.5-.7C93.4,584.6,75.1,525.7,75.1,460.3c0-125.3,67.4-226.9,150.6-226.9S376.3,335,376.3,460.3Z" fill="none" stroke="#3f1c0d" stroke-miterlimit="10" stroke-width="10"/>
+            <path id="arm-right" d="M294.1,283h0a41.6,41.6,0,0,1,56.7,15.2l67.1,116.3a41.6,41.6,0,0,1-15.2,56.7h0A41.6,41.6,0,0,1,346.1,456L322,414.3Z" fill="#e07320"/>
+            <path id="arm-right-shadow" d="M325,410.8s15.1,34.1,20.8,45.2c7,13.6,21.7,20.7,36,20.7a41.1,41.1,0,0,0,20.6-5.5A41.6,41.6,0,0,0,422,425.6a41.3,41.3,0,0,1-40.2,32c-14.4,0-25.5-10.5-35-22.6C332.9,417.4,325,410.8,325,410.8Z" fill="#af571d"/>
+            <path id="arm-left" d="M152.4,283h0a41.6,41.6,0,0,0-56.7,15.2L28.6,414.5a41.6,41.6,0,0,0,15.2,56.7h0A41.6,41.6,0,0,0,100.5,456l25.5-42.1Z" fill="#e07320"/>
+            <path id="arm-left-shadow" d="M121.2,410.8s-15.1,34.1-20.8,45.2c-7,13.6-21.7,20.7-36,20.7a41.1,41.1,0,0,1-20.6-5.5,41.6,41.6,0,0,1-19.6-45.5,41.3,41.3,0,0,0,40.2,32c14.4,0,25.5-10.5,35-22.6C113.3,417.4,121.2,410.8,121.2,410.8Z" fill="#af571d"/>
+            <path id="neck-shadow" d="M351.9,300.1c-33.4,19.3-78.7,27.6-128.6,27.6s-95.2-8.3-128.6-27.6l1.1-1.9a41.6,41.6,0,0,1,40.4-20.5c25-27.9,56-44.4,89.5-44.4s64.3,16.4,89.3,44.1a41.6,41.6,0,0,1,35.9,20.7Z" fill="#af571d"/>
+            <path id="arm-right-stroke" d="M294.1,283h0a41.6,41.6,0,0,1,56.7,15.2l67.1,116.3a41.6,41.6,0,0,1-15.2,56.7h0A41.6,41.6,0,0,1,346.1,456L322,414.3" fill="none" stroke="#3f1c0d" stroke-linecap="round" stroke-miterlimit="10" stroke-width="10"/>
+            <path id="arm-left-stroke" d="M152.4,283h0a41.6,41.6,0,0,0-56.7,15.2L28.6,414.5a41.6,41.6,0,0,0,15.2,56.7h0A41.6,41.6,0,0,0,100.5,456l24.1-41.7" fill="none" stroke="#3f1c0d" stroke-linecap="round" stroke-miterlimit="10" stroke-width="10"/>
+            <path id="belly" d="M304.8,435.8c0,46.9-36.5,85-81.5,85s-81.5-38-81.5-85S179.5,332,224.5,332,304.8,388.9,304.8,435.8Z" fill="#ee9e5c"/>
+            <path d="M299.4,504.7a33,33,0,0,1-.4,4.9c-3.7,24.9-35.1,44.4-73.4,44.4s-69.8-19.5-73.4-44.5a32.7,32.7,0,0,1-.3-4.8h0a2.4,2.4,0,0,1,4.5-1.2c10.3,18.9,37.4,32.4,69.3,32.4s58.9-13.5,69.3-32.4a2.4,2.4,0,0,1,4.5,1.2h0Z" fill="#af571d"/>
+            <path d="M165.7,533.3c39.9,27.3,80.5,27.7,120,0" fill="none" stroke="#3f1c0d" stroke-linecap="round" stroke-miterlimit="10" stroke-width="10"/>
+          </g>
+          <g id="head" class="head">
+            <g id="ears" class="ears">
+              <g>
+                <circle cx="92.2" cy="53.9" r="48.9" fill="#e07320" stroke="#3f1c0d" stroke-miterlimit="10" stroke-width="10"/>
+                <circle cx="93.1" cy="53.9" r="31.9" fill="#ee9e5c"/>
+              </g>
+              <g>
+                <circle cx="351.6" cy="53.9" r="48.9" fill="#e07320" stroke="#3f1c0d" stroke-miterlimit="10" stroke-width="10"/>
+                <circle cx="352.5" cy="53.9" r="31.9" fill="#ee9e5c"/>
+              </g>
+            </g>
+            <path d="M409.6,176.9c0,94.7-83.5,130.1-186.4,130.1S36.8,271.6,36.8,176.9,120.3,5.4,223.2,5.4,409.6,82.2,409.6,176.9Z" fill="#e07320"/>
+            <path id="head-stroke" d="M409.6,176.9c0,94.7-83.5,130.1-186.4,130.1S36.8,271.6,36.8,176.9,120.3,5.4,223.2,5.4,409.6,82.2,409.6,176.9Z" fill="none" stroke="#3f1c0d" stroke-miterlimit="10" stroke-width="10"/>
+            <g id="eyes" class="eyes">
+              <circle cx="291.1" cy="138" r="16.8" fill="#3f1c0c"/>
+              <circle cx="287.3" cy="134.2" r="4.8" fill="#884d3a"/>
+              <circle cx="155.3" cy="138" r="16.8" fill="#3f1c0c"/>
+              <circle cx="152.3" cy="134.2" r="4.8" fill="#884d3a"/>
+              <path d="M117.1,106.7l0.5-2.2,0.3-1.1,0.6-1.5a23.6,23.6,0,0,1,1.6-3.5l1.1-1.9,1.3-1.9,0.7-1,0.8-.9,1.7-1.9a33.4,33.4,0,0,1,14.1-8.3,36.2,36.2,0,0,1,5.3-1.1l2.6-.2h4.8l2.1,0.4,1.9,0.4,1.7,0.5,1.5,0.5,1.2,0.5,2.2,1.1a3.2,3.2,0,0,1-1.7,6h-0.4l-2-.2h-6.9l-1.7.2h-0.9l-0.9.2-1.9.3c-1.3.4-2.6,0.6-3.8,1.1a40.3,40.3,0,0,0-3.8,1.5,39.5,39.5,0,0,0-6.9,4.3l-1.4,1.3-0.7.6-0.6.7-1.2,1.3-1,1.3-1,1.2-0.8,1.1-0.7.9-0.6,1-1.2,1.9A3.2,3.2,0,0,1,117.1,106.7Z" fill="#3f1c0d"/>
+              <path d="M323.4,109.2l-1.2-1.9-0.6-1-0.7-.9-0.8-1.1-1-1.2-1-1.3-1.2-1.3-0.6-.7-0.7-.6-1.4-1.3a31.6,31.6,0,0,0-10.7-5.8c-1.3-.5-2.6-0.7-3.8-1.1l-1.9-.3-0.9-.2h-0.9l-1.7-.2h-6.9l-2,.2h-0.4a3.2,3.2,0,0,1-1.7-6l2.2-1.1,1.2-.5,1.5-.5,1.7-.5,1.9-.4,2.1-.4h4.8l2.6,0.2a36.2,36.2,0,0,1,5.3,1.1,35.1,35.1,0,0,1,14.1,8.3l1.7,1.9,0.8,0.9,0.7,1,1.3,1.9,1.1,1.9a23.6,23.6,0,0,1,1.6,3.5l0.6,1.5,0.3,1.1,0.5,2.2A3.2,3.2,0,0,1,323.4,109.2Z" fill="#3f1c0d"/>
+            </g>
+            <g>
+              <path class="snout" d="M308.5,230c0,43.6-40.2,52.6-87.3,52.6s-83.3-9-83.3-52.6,38.2-79,85.3-79S308.5,186.3,308.5,230Z" fill="#ee9e5c"/>
+              <g class="nose">
+                <path d="M197.6,187.5c0-11.1,11.5-11.7,25.6-11.7s25.6,0.7,25.6,11.7-11.5,20-25.6,20S197.6,198.6,197.6,187.5Z" fill="#3f1c0c"/>
+                <path d="M227.5,201a13.9,13.9,0,0,1,.2,1.7v4.6a109.6,109.6,0,0,1-.4,14.3c-0.1,1.3-.3,2.6-0.5,3.9s-0.4,2.6-.7,3.8a34.2,34.2,0,0,1-.9,3.5,32.6,32.6,0,0,1-1.2,3,23.6,23.6,0,0,1-1.3,2.4l-1.2,1.8-1.2,1.4a2,2,0,0,1-3.5-1.6v-0.2s0.1-.6.3-1.7,0.2-1.1.3-1.8,0.3-1.1.4-2.4,0.1-.9.2-1.3,0.2-.9.2-1.4,0.3-2,.4-3.1,0.3-2.2.3-3.3,0.1-2.3.1-3.5a101.1,101.1,0,0,0-1-13.1q-0.4-2.7-.6-4.3a13.9,13.9,0,0,1-.2-1.7A5,5,0,0,1,227.5,201Z" fill="#3f1c0d"/>
+                <path d="M233.7,244.2l-1.4.2-3.8.3H223l-3.1-.3-3.2-.4a46.8,46.8,0,0,1-6.2-1.4,53.2,53.2,0,0,1-5.3-1.9l-2-1-1.5-1-1.2-1a2.1,2.1,0,0,1,1.3-3.6h3.2l2,0.2,2.4,0.4,2.6,0.4L218,236l5.8,0.9,5.1,1,3.6,0.9,1.4,0.4A2.6,2.6,0,0,1,233.7,244.2Z" fill="#3f1c0d"/>
+                <ellipse cx="223.4" cy="183.3" rx="11.7" ry="3.5" fill="#884d3a"/>
+              </g>
+            </g>
+          </g>
+        </g>
+      </svg>
+    </div>
+  </div>
+
+  <script>
+    // === GALAXIA DE FONDO (semis-transparente) ===
+    const canvas = document.getElementById('galaxy');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const stars = [];
+    const meteors = [];
+    const satellites = [];
+
+    class Star {
+      constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.size = Math.random() * 2;
+        this.speed = Math.random() * 0.05;
+        this.brightness = Math.random();
+      }
+      update() {
+        this.brightness += 0.01;
+        if (this.brightness > 1) this.brightness = 0;
+      }
+      draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(255, 255, 255, ${0.2 + 0.3 * Math.sin(this.brightness * Math.PI)})`; // más transparente
+        ctx.fill();
+      }
+    }
+
+    class Meteor {
+      constructor() {
+        this.reset();
+      }
+      reset() {
+        this.x = Math.random() * canvas.width;
+        this.y = -20;
+        this.speedX = 3 + Math.random() * 5;
+        this.speedY = 8 + Math.random() * 5;
+        this.length = 10 + Math.random() * 20;
+        this.life = 1;
+      }
+      update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+        this.life -= 0.02;
+        if (this.life <= 0 || this.x > canvas.width + 50 || this.y > canvas.height + 50) {
+          this.reset();
+        }
+      }
+      draw() {
+        ctx.beginPath();
+        ctx.moveTo(this.x, this.y);
+        ctx.lineTo(this.x - this.length, this.y - this.length / 2);
+        ctx.strokeStyle = `rgba(255, 255, 255, ${this.life * 0.6})`; // más transparente
+        ctx.lineWidth = 2;
+        ctx.stroke();
+      }
+    }
+
+    class Satellite {
+      constructor() {
+        this.x = -30;
+        this.y = Math.random() * canvas.height * 0.6;
+        this.speed = 0.5 + Math.random() * 1;
+      }
+      update() {
+        this.x += this.speed;
+        if (this.x > canvas.width + 30) this.x = -30;
+      }
+      draw() {
+        ctx.fillStyle = 'rgba(170, 170, 170, 0.4)';
+        ctx.fillRect(this.x, this.y, 20, 6);
+        ctx.fillStyle = 'rgba(102, 102, 102, 0.4)';
+        ctx.fillRect(this.x + 5, this.y - 4, 10, 4);
+      }
+    }
+
+    for (let i = 0; i < 300; i++) stars.push(new Star()); // menos estrellas para no tapar
+    for (let i = 0; i < 5; i++) meteors.push(new Meteor());
+    for (let i = 0; i < 3; i++) satellites.push(new Satellite());
+
+    function animateGalaxy() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height); // ¡NO pintar fondo negro!
+
+      stars.forEach(star => {
+        star.update();
+        star.draw();
+      });
+
+      meteors.forEach(meteor => {
+        meteor.update();
+        meteor.draw();
+      });
+
+      satellites.forEach(sat => {
+        sat.update();
+        sat.draw();
+      });
+
+      requestAnimationFrame(animateGalaxy);
+    }
+
+    // === CHISPAS FLITANTES (LUCIÉRNAGAS / BRILLOS) ===
+    const sparklesCanvas = document.getElementById('sparkles');
+    const sCtx = sparklesCanvas.getContext('2d');
+    sparklesCanvas.width = window.innerWidth;
+    sparklesCanvas.height = window.innerHeight;
+
+    const sparkles = [];
+    const sparkleColors = ['#ffeb3b', '#ff9ec7', '#76ff03', '#4fc3f7', '#e040fb', '#18ffff'];
+
+    class Sparkle {
+      constructor() {
+        this.reset();
+      }
+      reset() {
+        this.x = Math.random() * sparklesCanvas.width;
+        this.y = Math.random() * sparklesCanvas.height;
+        this.size = 1 + Math.random() * 3;
+        this.opacity = 0.2 + Math.random() * 0.5;
+        this.speedX = (Math.random() - 0.5) * 0.3;
+        this.speedY = (Math.random() - 0.5) * 0.3;
+        this.color = sparkleColors[Math.floor(Math.random() * sparkleColors.length)];
+        this.pulse = Math.random() * Math.PI * 2;
+      }
+      update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+        this.pulse += 0.02;
+        this.opacity = 0.2 + 0.4 * Math.sin(this.pulse);
+        if (this.x < -10 || this.x > sparklesCanvas.width + 10 || this.y < -10 || this.y > sparklesCanvas.height + 10) {
+          this.reset();
+        }
+      }
+      draw() {
+        sCtx.beginPath();
+        sCtx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        sCtx.fillStyle = `rgba(${this.hexToRgb(this.color).r}, ${this.hexToRgb(this.color).g}, ${this.hexToRgb(this.color).b}, ${this.opacity})`;
+        sCtx.fill();
+      }
+      hexToRgb(hex) {
+        const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+        return result ? {
+          r: parseInt(result[1], 16),
+          g: parseInt(result[2], 16),
+          b: parseInt(result[3], 16)
+        } : { r: 255, g: 255, b: 255 };
+      }
+    }
+
+    for (let i = 0; i < 100; i++) sparkles.push(new Sparkle());
+
+    function animateSparkles() {
+      sCtx.clearRect(0, 0, sparklesCanvas.width, sparklesCanvas.height);
+      sparkles.forEach(sp => {
+        sp.update();
+        sp.draw();
+      });
+      requestAnimationFrame(animateSparkles);
+    }
+
+    // === MANEJO DE REDIMENSIONAMIENTO ===
+    window.addEventListener('resize', () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      sparklesCanvas.width = window.innerWidth;
+      sparklesCanvas.height = window.innerHeight;
+    });
+
+    animateGalaxy();
+    animateSparkles();
+
+    // === INTERACCIÓN MEJORADA ===
+    const lovePhrases = [
+      "💖Vic ❤ Persi💖",
+      "✨ Mi amor ✨",
+      "🌟 Creador 🌟",
+      "💫 Mi corazón 💫",
+      "🌙Vic ❤ Persi🌙",
+      "🌷vida 🌷",
+      "🌈 Mi sol 🌈",
+      "❤️ Programador ❤️",
+      "🥰 Mi cielo 🥰",
+      "💞Vic ❤ Persi💞",
+      "🌸 Mi flor 🌸",
+      "🍬 Diseñador 🍬",
+      "🕊️ Mi alma 🕊️",
+      "💫 Tesoro 💫",
+      "✨ Bendición ✨",
+      "🤍Vic ❤ Persi🤍",
+      "🧡 Mi sol 🧡",
+      "💖 Mi mundo 💖",
+      "💕 Mi milagro 💕",
+      "🌷Vic ❤ Persi🌷",
+      "🌌Vic ❤ Persi🌌",
+      "💗 Mi razón 💗",
+      "🫶 Te adoro 🫶",
+      "🤍 Solo tú 🤍",
+      "💌Vic ❤ Persi💌"
+    ];
+
+    function createLoveText(x, y) {
+      const text = document.createElement('div');
+      text.className = 'love-text';
+      text.textContent = lovePhrases[Math.floor(Math.random() * lovePhrases.length)];
+      text.style.left = `${x}px`;
+      text.style.top = `${y}px`;
+      document.body.appendChild(text);
+
+      setTimeout(() => {
+        text.remove();
+      }, 2500);
+    }
+
+    function createParticles(x, y) {
+      const colors = ['#ff5e8a', '#ff9ec7', '#ffeb3b', '#4fc3f7', '#76ff03', '#e040fb', '#18ffff'];
+      for (let i = 0; i < 80; i++) {
+        const particle = document.createElement('div');
+        particle.style.position = 'absolute';
+        particle.style.width = '4px';
+        particle.style.height = '4px';
+        particle.style.borderRadius = '50%';
+        particle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        particle.style.left = `${x}px`;
+        particle.style.top = `${y}px`;
+        particle.style.pointerEvents = 'none';
+        particle.style.zIndex = '15';
+        document.body.appendChild(particle);
+
+        const angle = Math.random() * Math.PI * 2;
+        const speed = 1 + Math.random() * 4;
+        const vx = Math.cos(angle) * speed;
+        const vy = Math.sin(angle) * speed;
+        let opacity = 1;
+        let size = 4;
+
+        const animate = () => {
+          const currentLeft = parseFloat(particle.style.left);
+          const currentTop = parseFloat(particle.style.top);
+          particle.style.left = `${currentLeft + vx}px`;
+          particle.style.top = `${currentTop + vy}px`;
+          opacity -= 0.015;
+          size -= 0.06;
+          particle.style.opacity = opacity;
+          particle.style.width = `${Math.max(size, 0)}px`;
+          particle.style.height = `${Math.max(size, 0)}px`;
+          if (opacity > 0 && size > 0) {
+            requestAnimationFrame(animate);
+          } else {
+            particle.remove();
+          }
+        };
+        animate();
+      }
+    }
+
+    document.body.addEventListener('click', (e) => {
+      createLoveText(e.clientX, e.clientY);
+      createParticles(e.clientX, e.clientY);
+    });
+
+    // === MOVIMIENTO DEL OSO ===
+    const eyes = document.querySelector(".eyes");
+    const head = document.querySelector(".head");
+    const ears = document.querySelector(".ears");
+    const nose = document.querySelector(".nose");
+    const snout = document.querySelector(".snout");
+
+    let cursorPos = { x: 0, y: 0 };
+    let windowWidth = window.innerWidth;
+    let windowHeight = window.innerHeight;
+
+    function setWindowSize() {
+      windowWidth = window.innerWidth;
+      windowHeight = window.innerHeight;
+    }
+
+    function mousemove(e) {
+      cursorPos = { x: e.clientX, y: e.clientY };
+      initFollow();
+    }
+
+    function touchmove(e) {
+      cursorPos = { x: e.targetTouches[0].clientX, y: e.targetTouches[0].clientY };
+      initFollow();
+    }
+
+    const followCursor = (el, xRatio, yRatio) => {
+      if (!el) return;
+      const elOffset = el.getBoundingClientRect();
+      const centerX = elOffset.x + elOffset.width / 2;
+      const centerY = elOffset.y + elOffset.height / 2;
+      const distanceLeft = ((cursorPos.x - centerX) * 100) / windowWidth;
+      const distanceTop = ((cursorPos.y - centerY) * 100) / windowHeight;
+      el.style.transform = `translate(${distanceLeft / xRatio}px, ${distanceTop / yRatio}px)`;
+    };
+
+    const initFollow = () => {
+      followCursor(ears, -2.8, -2.8);
+      followCursor(head, 6, 6);
+      followCursor(eyes, 1.8, 1.8);
+      followCursor(snout, 1.5, 1.7);
+      followCursor(nose, 1, 1);
+    };
+
+    window.addEventListener('resize', setWindowSize);
+    window.addEventListener("mousemove", mousemove);
+    window.addEventListener("touchmove", touchmove, { passive: false });
+
+    // === PANTALLA DE INICIO Y AUDIO ===
+    const startScreen = document.getElementById('start-screen');
+    const bgMusic = document.getElementById('bg-music');
+    const mainContent = document.getElementById('main-content');
+
+    function startExperience() {
+      bgMusic.play().catch(e => console.log("Audio no pudo reproducirse automáticamente:", e));
+      startScreen.style.opacity = '0';
+      startScreen.style.visibility = 'hidden';
+      mainContent.style.filter = 'none';
+    }
+
+    document.body.addEventListener('click', startExperience, { once: true });
+    document.body.addEventListener('touchstart', startExperience, { once: true });
+  </script>
+</body>
+</html>
